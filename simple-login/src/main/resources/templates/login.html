@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<!-- <link type="text/css" rel="stylesheet" th:href="@{/css/styl.css}" /> -->
+</head>
+<style> 
+    /*set border to the form*/ 
+      
+    form { 
+        border: 3px solid #f1f1f1; 
+    } 
+    /*assign full width inputs*/ 
+      
+    input[type=text], 
+    input[type=password] { 
+        width: 100%; 
+        padding: 12px 20px; 
+        margin: 8px 0; 
+        display: inline-block; 
+        border: 1px solid #ccc; 
+        box-sizing: border-box; 
+    } 
+    /*set a style for the buttons*/ 
+      
+    button { 
+        background-color: #4CAF50; 
+        color: white; 
+        padding: 14px 20px; 
+        margin: 8px 0; 
+        border: none; 
+        cursor: pointer; 
+        width: 100%; 
+    } 
+    /* set a hover effect for the button*/ 
+      
+    button:hover { 
+        opacity: 0.8; 
+    } 
+    /*set extra style for the cancel button*/ 
+      
+    .cancelbtn { 
+        width: auto; 
+        padding: 10px 18px; 
+        background-color: #f44336; 
+    } 
+      
+    .container { 
+        padding: 16px; 
+    } 
+    /*set the forgot password text*/ 
+      
+    span.psw { 
+        float: right; 
+        padding-top: 16px; 
+    } 
+    /*set styles for span and cancel button on small screens*/ 
+      
+    @media screen and (max-width: 300px) { 
+        span.psw { 
+            display: block; 
+            float: none; 
+        } 
+        .cancelbtn { 
+            width: 100%; 
+        } 
+    } 
+</style> 
+  
+<body>
+<div class="container">
+    <section id="content">
+    <div th:if="${param.error}">
+            Invalid username and password.
+            </div>
+        <form  th:action="@{/login}" method="post">
+            <div class="log-form">
+  <h2>Login to your account</h2>
+    <input type="text" title="username" placeholder="username" name="username" />
+    <input type="password" title="username" placeholder="password" name="password" />
+    <button type="submit" class="btn">Login</button>
+</div>
+        </form><!-- form -->
+        
+    </section><!-- content -->
+</div><!-- container -->
+</body>
+</html>
